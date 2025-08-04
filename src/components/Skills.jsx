@@ -21,7 +21,7 @@ import Shopify from "../assets/Skills/Shopify.png";
 import Lovable from "../assets/Skills/Lovable.png";
 import Graphy from "../assets/Skills/Graphy.png";
 import GithubCopilot from "../assets/Skills/GithubCopilot.png";
-import GoogleAds from "../assets/Skills/google-ads.png";
+import GoogleAds from "../assets/Skills/GoogleAds.png";
 import V0 from "../assets/Skills/V0.png";
 
 const skills = [
