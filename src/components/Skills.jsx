@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Skill Icons
-import HTML from "../assets/skills/HTML-logo.png";
+import HTML from "../assets/skills/HTML_Logo.png";
 import CSS from "../assets/skills/CSS.png";
 import JavaScript from "../assets/skills/javascript.png";
 import ReactIcon from "../assets/skills/react.png";
