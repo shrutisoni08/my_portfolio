@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 // Skill Icons
 import HTML from "../assets/Skills/HTML_Logo.png";
 import CSS from "../assets/Skills/CSS.png";
-import JavaScript from "../assets/Skills/javascript.png";
+import JavaScript from "../assets/Skills/javaScript.png";
 import ReactIcon from "../assets/Skills/react.png";
 import NodeJS from "../assets/Skills/node.png";
 import WordPress from "../assets/Skills/wordpress.png";
