@@ -1,4 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Profile from "../assets/profile.jpg"; // Assuming you have a profile image
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { projects } from "./Data";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const techColors = {
