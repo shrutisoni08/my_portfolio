@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-// src/components/Work.jsx
 import React from "react";
 import { work } from "./Data";
 import { FaExternalLinkAlt } from "react-icons/fa";

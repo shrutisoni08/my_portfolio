@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -59,7 +58,7 @@ const containerVariants = {
 const Skills = () => {
   return (
     <motion.section
-    id="skills" 
+      id="skills"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

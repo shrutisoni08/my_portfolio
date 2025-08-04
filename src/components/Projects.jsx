@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { projects } from "./Data";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
