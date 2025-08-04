@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
+      {/* <title>My Portfolio</title> */}
       <BrowserRouter>
         <Navbar />
         <Hero />
