@@ -3,26 +3,26 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Skill Icons
-import HTML from "../assets/Skills/HTML_Logo.png";
+import HTML from "../assets/Skills/HTML.png";
 import CSS from "../assets/Skills/CSS.png";
 import JavaScript from "../assets/Skills/javaScript.png";
-import ReactIcon from "../assets/Skills/react.png";
-import NodeJS from "../assets/Skills/node.png";
+import ReactIcon from "../assets/Skills/ReactIcon.png";
+import NodeJS from "../assets/Skills/NodeJS.png";
 import WordPress from "../assets/Skills/wordpress.png";
-import GitHub from "../assets/Skills/github.png";
-import Bootstrap from "../assets/Skills/bootstrap.png";
-import TailwindCSS from "../assets/Skills/tailwind.png";
-import Git from "../assets/Skills/git.png";
-import Figma from "../assets/Skills/figma.png";
-import Canva from "../assets/Skills/canva.png";
-import MaterialUI from "../assets/Skills/material-ui.png";
-import GPT from "../assets/Skills/GPT-4.png";
-import Shopify from "../assets/Skills/shopify.png";
-import Lovable from "../assets/Skills/lovable.png";
-import Graphy from "../assets/Skills/graphy.png";
-import GithubCopilot from "../assets/Skills/github-copilot.png";
+import GitHub from "../assets/Skills/GitHub.png";
+import Bootstrap from "../assets/Skills/Bootstrap.png";
+import TailwindCSS from "../assets/Skills/TailwindCSS.png";
+import Git from "../assets/Skills/Git.png";
+import Figma from "../assets/Skills/Figma.png";
+import Canva from "../assets/Skills/Canva.png";
+import MaterialUI from "../assets/Skills/MaterialUI.png";
+import GPT from "../assets/Skills/GPT.png";
+import Shopify from "../assets/Skills/Shopify.png";
+import Lovable from "../assets/Skills/Lovable.png";
+import Graphy from "../assets/Skills/Graphy.png";
+import GithubCopilot from "../assets/Skills/GithubCopilot.png";
 import GoogleAds from "../assets/Skills/google-ads.png";
-import V0 from "../assets/Skills/v0.png";
+import V0 from "../assets/Skills/V0.png";
 
 const skills = [
   { name: "HTML", icon: HTML },
