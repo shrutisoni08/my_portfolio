@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+* {
+  scroll-behavior: smooth;
+}
+.logo-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #eee6d6;
+  text-decoration: wavy underline;
+  letter-spacing: 0.15em;
+  text-transform: capitalize;
+}
+.font-para {
+  font-family: "Playfair Display", serif;
+}
+.font-heading {
+  font-family: "Roboto Flex", sans-serif;
+}
+.font-skill {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.nav-links {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 0.975rem;
+}
+.cnt-btn {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 0.999em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  background-color: #ea8f10;
+  color: white;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+  #hero {
+    margin-top: 2rem;
+    padding: 1rem 1rem;
+    gap: 0.3rem;
+    font-size: 0.5rem;
+  }
+  .decorative-r {
+    right: -15px;
+  }
+  .decorative-l {
+    left: -70px;
+  }
+  #hero img {
+    width: 100%;
+    height: auto;
+  }
+  #about {
+    padding: 1rem 1rem;
+  }
+  .para {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .abt-head {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+  .para-div {
+    gap: 1rem;
+  }
+  #skills {
+    padding: 1rem 1rem;
+  }
+  .skills-container {
+    padding: 0rem;
+  }
+  #work {
+    padding: 1rem 1rem;
+    gap: 1rem;
+  }
+  .work-container {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  #hero {
+    margin-top: 3.7rem;
+    padding: 1rem 1rem;
+    gap: 0.3rem;
+    font-size: 0.5rem;
+  }
+  .abt-head {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+}
