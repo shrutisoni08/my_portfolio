@@ -2,26 +2,26 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Skill Icons
-import HTML from "../assets/skills/HTML_Logo.png";
-import CSS from "../assets/skills/CSS.png";
-import JavaScript from "../assets/skills/javascript.png";
-import ReactIcon from "../assets/skills/react.png";
-import NodeJS from "../assets/skills/node.png";
-import WordPress from "../assets/skills/wordpress.png";
-import GitHub from "../assets/skills/github.png";
-import Bootstrap from "../assets/skills/bootstrap.png";
-import TailwindCSS from "../assets/skills/tailwind.png";
-import Git from "../assets/skills/git.png";
-import Figma from "../assets/skills/figma.png";
-import Canva from "../assets/skills/canva.png";
-import MaterialUI from "../assets/skills/material-ui.png";
-import GPT from "../assets/skills/GPT-4.png";
-import Shopify from "../assets/skills/shopify.png";
-import Lovable from "../assets/skills/lovable.png";
-import Graphy from "../assets/skills/graphy.png";
-import GithubCopilot from "../assets/skills/github-copilot.png";
-import GoogleAds from "../assets/skills/google-ads.png";
-import V0 from "../assets/skills/v0.png";
+import HTML from "../assets/Skills/HTML_Logo.png";
+import CSS from "../assets/Skills/CSS.png";
+import JavaScript from "../assets/Skills/javascript.png";
+import ReactIcon from "../assets/Skills/react.png";
+import NodeJS from "../assets/Skills/node.png";
+import WordPress from "../assets/Skills/wordpress.png";
+import GitHub from "../assets/Skills/github.png";
+import Bootstrap from "../assets/Skills/bootstrap.png";
+import TailwindCSS from "../assets/Skills/tailwind.png";
+import Git from "../assets/Skills/git.png";
+import Figma from "../assets/Skills/figma.png";
+import Canva from "../assets/Skills/canva.png";
+import MaterialUI from "../assets/Skills/material-ui.png";
+import GPT from "../assets/Skills/GPT-4.png";
+import Shopify from "../assets/Skills/shopify.png";
+import Lovable from "../assets/Skills/lovable.png";
+import Graphy from "../assets/Skills/graphy.png";
+import GithubCopilot from "../assets/Skills/github-copilot.png";
+import GoogleAds from "../assets/Skills/google-ads.png";
+import V0 from "../assets/Skills/v0.png";
 
 const skills = [
   { name: "HTML", icon: HTML },
