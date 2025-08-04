@@ -1,9 +1,9 @@
 // Data
 // src/components/Data.js
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import MediBot from "../assets/Work/mediBot.png";
-import SkillEcted from "../assets/Work/skillEcted.png";
-import MediLife from "../assets/Work/mediLife.png";
+import MediBot from "../assets/Work/MediBot.png";
+import SkillEcted from "../assets/Work/SkillEcted.png";
+import MediLife from "../assets/Work/MediLife.png";
 import ShoppersWorld from "../assets/Work/Shoppers-World.png";
 import FashionPlaza from "../assets/Work/Fashion_Plaza.png";
 import Flexical from "../assets/Work/FlexiCalc.png";
@@ -26,8 +26,7 @@ export const work = [
     id: 2,
     title: "02. SkillEcted Learning Platform",
     role: "Front End Developer",
-    techStack:
-      "HTML, CSS, JavaScript, Graphy CMS, Custom HTML, Custom CSS",
+    techStack: "HTML, CSS, JavaScript, Graphy CMS, Custom HTML, Custom CSS",
     description:
       "SkillEcted is a robust and intuitive Learning Management System (LMS) built as a digital marketplace for online education. The platform enables trainers to create, manage, and sell courses, while learners can enroll, track their progress, and complete learning modules at their own pace. The platform features dynamic dashboards tailored for both trainers and students, along with course analytics, progress tracking, and a course approval workflow to ensure quality content delivery. Built with a mobile-first approach using Graphy CMS, custom HTML, CSS, and JavaScript, the system ensures seamless responsiveness and accessibility across all devices.",
     image: SkillEcted,
