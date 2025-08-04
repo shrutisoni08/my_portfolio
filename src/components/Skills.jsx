@@ -3,26 +3,26 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Skill Icons
-import HTML from "../assets/Skills/HTML.png";
-import CSS from "../assets/Skills/CSS.png";
-import JavaScript from "../assets/Skills/javaScript.png";
-import ReactIcon from "../assets/Skills/ReactIcon.png";
-import NodeJS from "../assets/Skills/NodeJS.png";
-import WordPress from "../assets/Skills/wordpress.png";
-import GitHub from "../assets/Skills/GitHub.png";
-import Bootstrap from "../assets/Skills/Bootstrap.png";
-import TailwindCSS from "../assets/Skills/TailwindCSS.png";
-import Git from "../assets/Skills/Git.png";
-import Figma from "../assets/Skills/Figma.png";
-import Canva from "../assets/Skills/Canva.png";
-import MaterialUI from "../assets/Skills/MaterialUI.png";
-import GPT from "../assets/Skills/GPT.png";
-import Shopify from "../assets/Skills/Shopify.png";
-import Lovable from "../assets/Skills/Lovable.png";
-import Graphy from "../assets/Skills/Graphy.png";
-import GithubCopilot from "../assets/Skills/GithubCopilot.png";
-import GoogleAds from "../assets/Skills/GoogleAds.png";
-import V0 from "../assets/Skills/V0.png";
+import Bootstrap from "../assets/Skills/skill1.png";
+import Canva from "../assets/Skills/skill2.png";
+import CSS from "../assets/Skills/skill3.png";
+import Figma from "../assets/Skills/skill4.png";
+import Git from "../assets/Skills/skill5.png";
+import GitHub from "../assets/Skills/skill6.png";
+import GithubCopilot from "../assets/Skills/skill7.png";
+import GoogleAds from "../assets/Skills/skill8.png";
+import GPT from "../assets/Skills/skill9.png";
+import Graphy from "../assets/Skills/skill10.png";
+import HTML from "../assets/Skills/skill11.png";
+import JavaScript from "../assets/Skills/skill12.png";
+import Lovable from "../assets/Skills/skill13.png";
+import MaterialUI from "../assets/Skills/skill14.png";
+import NodeJS from "../assets/Skills/skill5.png";
+import ReactIcon from "../assets/Skills/skill6.png";
+import Shopify from "../assets/Skills/skill17.png";
+import TailwindCSS from "../assets/Skills/skill18.png";
+import V0 from "../assets/Skills/skill19.png";
+import WordPress from "../assets/Skills/skill20.png";
 
 const skills = [
   { name: "HTML", icon: HTML },
