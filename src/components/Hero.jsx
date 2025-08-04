@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 // src/components/Hero.jsx
-import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Profile from "../assets/profile.jpg"; // Assuming you have a profile image
