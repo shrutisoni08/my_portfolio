@@ -2,6 +2,7 @@
 // src/components/Data.js
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import MediBot from "../assets/Work/MediBot.png";
+import Brands from "../assets/Work/Brand-s-Group.png";
 import SkillEcted from "../assets/Work/SkillEcted.png";
 import MediLife from "../assets/Work/MediLife.png";
 import ShoppersWorld from "../assets/Work/Shoppers-World.png";
@@ -11,9 +12,20 @@ import MyTunes from "../assets/Work/MyTunes.png";
 import CodersCafe from "../assets/Work/The-Coders-Cafe.png";
 
 export const work = [
-  {
+    {
     id: 1,
-    title: "01. Medibot AI",
+    title: "01. Brand's Group Corporate Pvt. Ltd.",
+    role: "Front End Developer (Currently Working)",
+    techStack:
+      "React.js, Tailwind CSS, Razorpay, Chatbot API, React Router, Context API",
+    description:
+    "Worked on developing and maintaining responsive, user-friendly websites and web interfaces for various business and client requirements. Responsible for converting UI/UX designs into responsive web pages, implementing frontend functionality, integrating APIs, debugging issues, and optimizing website performance. Gained hands-on experience working with WordPress and Shopify platforms, customizing CMS-based solutions, managing web hosting, and supporting deployment workflows. Collaborated with teams to ensure seamless user experiences, cross-browser compatibility, and scalable frontend solutions across multiple projects.",
+    image:  Brands,
+    live: "https://brandgroup.in/",
+  },
+  {
+    id: 2,
+    title: "02. Medibot AI",
     role: "Front End Developer",
     techStack:
       "React.js, Tailwind CSS, Razorpay, Chatbot API, React Router, Context API",
@@ -23,8 +35,8 @@ export const work = [
     live: "https://www.medibot-ai.com/",
   },
   {
-    id: 2,
-    title: "02. SkillEcted Learning Platform",
+    id: 3,
+    title: "03. SkillEcted Learning Platform",
     role: "Front End Developer",
     techStack: "HTML, CSS, JavaScript, Graphy CMS, Custom HTML, Custom CSS",
     description:
@@ -33,8 +45,8 @@ export const work = [
     live: "https://www.skillected.com/",
   },
   {
-    id: 3,
-    title: "03. Medilife Health Care",
+    id: 4,
+    title: "04. Medilife Health Care",
     role: "Front End Developer",
     techStack: "React.js, Tailwind CSS, React Router, Context API, EmailJS",
     description:
