@@ -10,6 +10,7 @@ import FashionPlaza from "../assets/Work/Fashion_Plaza.png";
 import Flexical from "../assets/Work/FlexiCalc.png";
 import MyTunes from "../assets/Work/MyTunes.png";
 import CodersCafe from "../assets/Work/The-Coders-Cafe.png";
+import BrandRoot from "../assets/Work/brandroot.png";
 
 export const work = [
     {
@@ -52,8 +53,18 @@ export const work = [
     description:
       "MediLife Health Care is a React-based admin dashboard application built to streamline the daily operations of clinics and hospitals. It provides administrators with tools to manage patient records, track appointments, list and assign doctors, and visualize hospital performance metrics through dynamic charts. The dashboard is built using React.js, Tailwind CSS, and Chart.js, ensuring an intuitive interface and clean data presentation. The project emphasizes performance and scalability, featuring modular components, custom forms, and real-time analytics visualization. The goal was to reduce manual administrative efforts and provide staff with clear, organized access to hospital data.",
     image: MediLife,
-    live: "https://www.medilifehealthcare.info/",
+    live: "https://healthcare-medilife.netlify.app/",
   },
+  {
+  id: 5,
+  title: "05. Brand Root Enterprise",
+  role: "Junior Web Developer",
+  techStack: "WordPress, HTML, CSS, JavaScript, Bootstrap",
+  description:
+    "Worked as a Junior Web Developer, managing and maintaining WordPress and custom HTML/CSS/JavaScript websites for multiple clients. Responsible for implementing website updates, content management, bug fixing, and UI enhancements to improve user experience. Assisted with website optimization, routine maintenance, deployment, and ensuring responsive, cross-browser compatible web pages. Collaborated with the team to deliver stable, high-performing websites while maintaining code quality and meeting project deadlines.",
+  image: BrandRoot,
+  live: "#",
+},
 ];
 
 export const projects = [
