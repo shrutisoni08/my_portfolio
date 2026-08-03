@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import resume from "../assets/Shruti_Soni_FrontEnd_Developer_Resume.pdf";
+import resume from "../assets/Shruti's_Resume.pdf";
 import shape from "../assets/shape.png";
 
 const About = () => {
