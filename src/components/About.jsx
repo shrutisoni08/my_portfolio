@@ -3,7 +3,6 @@ import {
   FaGithub,
   FaMailBulk,
   FaLinkedin,
-  // FaDribbble,
 } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -72,9 +71,6 @@ const About = () => {
             >
               <FaMailBulk />
             </a>
-            {/* <a href="#" className="hover:text-orange-400 transition">
-              <FaDribbble />
-            </a> */}
           </div>
         </div>
       </motion.div>
