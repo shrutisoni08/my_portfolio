@@ -84,7 +84,7 @@ const About = () => {
         viewport={{ once: true }}
       >
         <p className="para line-height-[1.5]">
-          I’m a passionate Full Stack Developer with over 4 years of experience in
+          I’m a passionate Full Stack Developer with over 4+ years of experience in
           building interactive, responsive, and performance-driven web
           applications. I specialize in crafting intuitive user experiences
           using HTML5, CSS3, Tailwind CSS, JavaScript, and ReactJS. With a keen
