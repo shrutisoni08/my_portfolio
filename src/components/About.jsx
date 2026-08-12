@@ -93,7 +93,7 @@ const About = () => {
         </p>
 
         <p className="para line-height-[1.5]">
-          I’ve worked on impactful projects like <strong>Medibot</strong>, an
+          I’ve worked on impactful projects like <strong>Medibot.AI</strong>, an
           AI-powered healthcare assistant, and{" "}
           <strong>MediLife Healthcare</strong>, a patient-focused hospital
           management solution. My role involved implementing pixel-perfect
