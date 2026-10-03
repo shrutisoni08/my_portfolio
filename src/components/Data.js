@@ -16,7 +16,7 @@ export const work = [
     {
     id: 1,
     title: "01. Brand's Group Corporate Pvt. Ltd.",
-    role: "Front End Developer {July, 2025 - September 2026}",
+    role: "Front End Developer, {July 2025 - September 2026}",
     techStack:
       "React.js, Tailwind CSS, Razorpay, Chatbot API, React Router, Context API",
     description:
@@ -27,7 +27,7 @@ export const work = [
   {
     id: 2,
     title: "02. Medibot AI",
-    role: "Front End Developer",
+    role: "Front End Developer, {Jan 2025 - Jun 2025}",
     techStack:
       "React.js, Tailwind CSS, Razorpay, Chatbot API, React Router, Context API",
     description:
@@ -38,7 +38,7 @@ export const work = [
   {
     id: 3,
     title: "03. SkillEcted Learning Platform",
-    role: "Front End Developer",
+    role: "Front End Developer, {Jul 2024 - Jan 2025}",
     techStack: "HTML, CSS, JavaScript, Graphy CMS, Custom HTML, Custom CSS",
     description:
       "SkillEcted is a robust and intuitive Learning Management System (LMS) built as a digital marketplace for online education. The platform enables trainers to create, manage, and sell courses, while learners can enroll, track their progress, and complete learning modules at their own pace. The platform features dynamic dashboards tailored for both trainers and students, along with course analytics, progress tracking, and a course approval workflow to ensure quality content delivery. Built with a mobile-first approach using Graphy CMS, custom HTML, CSS, and JavaScript, the system ensures seamless responsiveness and accessibility across all devices.",
@@ -48,7 +48,7 @@ export const work = [
   {
     id: 4,
     title: "04. Medilife Health Care",
-    role: "Front End Developer",
+    role: "Front End Developer, {Apr 2024 - Jun 2025}",
     techStack: "React.js, Tailwind CSS, React Router, Context API, EmailJS",
     description:
       "MediLife Health Care is a React-based admin dashboard application built to streamline the daily operations of clinics and hospitals. It provides administrators with tools to manage patient records, track appointments, list and assign doctors, and visualize hospital performance metrics through dynamic charts. The dashboard is built using React.js, Tailwind CSS, and Chart.js, ensuring an intuitive interface and clean data presentation. The project emphasizes performance and scalability, featuring modular components, custom forms, and real-time analytics visualization. The goal was to reduce manual administrative efforts and provide staff with clear, organized access to hospital data.",
@@ -58,7 +58,7 @@ export const work = [
   {
   id: 5,
   title: "05. Brand Root Enterprise",
-  role: "Junior Web Developer",
+  role: "Junior Web Developer, {Sep 2021 - Sep 2023}",
   techStack: "WordPress, HTML, CSS, JavaScript, Bootstrap",
   description:
     "Worked as a Junior Web Developer, managing and maintaining WordPress and custom HTML/CSS/JavaScript websites for multiple clients. Responsible for implementing website updates, content management, bug fixing, and UI enhancements to improve user experience. Assisted with website optimization, routine maintenance, deployment, and ensuring responsive, cross-browser compatible web pages. Collaborated with the team to deliver stable, high-performing websites while maintaining code quality and meeting project deadlines.",
