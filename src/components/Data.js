@@ -16,7 +16,7 @@ export const work = [
     {
     id: 1,
     title: "01. Brand's Group Corporate Pvt. Ltd.",
-    role: "Front End Developer (Currently Working)",
+    role: "Front End Developer {July, 2025 - September 2026}",
     techStack:
       "React.js, Tailwind CSS, Razorpay, Chatbot API, React Router, Context API",
     description:
