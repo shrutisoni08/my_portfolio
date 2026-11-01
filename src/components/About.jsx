@@ -1,117 +1,35 @@
-import React from "react";
-import {
-  FaGithub,
-  FaMailBulk,
-  FaLinkedin,
-} from "react-icons/fa";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import resume from "../assets/Shruti's_Resume.pdf";
-import shape from "../assets/shape.png";
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { FiCheck, FiDownload } from 'react-icons/fi'
+import { portfolioData } from '../data/portfolioData'
+import { Button, Section, SectionHeading, fade, stagger } from './ui'
 
-const About = () => {
+export default function About() {
+  const { about, quote, highlights, profileImage, resume, name } = portfolioData.personal
+  const [imgOk, setImgOk] = useState(true)
   return (
-    <section
-      className="w-full min-h-screen bg-[#212322] text-[#EEE6D6] flex flex-col md:flex-row items-start justify-between px-6 md:px-20 py-16 gap-12"
-      id="about"
-    >
-      {/* Left Section */}
-      <motion.div
-        className="relative w-full md:w-1/2 flex flex-col justify-start items-start space-y-10"
-        initial={{ y: 80, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        {/* Background Stripes Image */}
-        <div className="absolute top-0 left-[-80px] w-[50%] h-[300px] z-0 opacity-20 pointer-events-none">
-          <img
-            src={shape}
-            alt="Stripes background"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10">
-          <p className="text-xl uppercase text-orange-500 mb-2 font-heading">
-            About
-          </p>
-          <h2 className="abt-head text-4xl md:text-[5.2rem] font-bold leading-tight mb-8">
-            Passionate <br /> Frontend Developer
-          </h2>
-
-          {/* Resume Button */}
-          <a
-            href={resume}
-            target="_blank"
-            download
-            className="inline-block text-lg md:text-xl border border-[#EEE6D6] px-8 py-4 rounded hover:bg-orange-500 hover:text-[#EEE6D6] transition mb-8"
-          >
-            Download Resume
-          </a>
-
-          {/* Social Icons */}
-          <div className="flex space-x-5 text-xl">
-            <a
-              href="https://www.linkedin.com/in/shruti-soni-12d081209/"
-              className="hover:text-orange-400 transition"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://github.com/shrutisoni08"
-              className="hover:text-orange-400 transition"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="mailto:shruti08soni@gmail.com"
-              className="hover:text-orange-400 transition"
-            >
-              <FaMailBulk />
-            </a>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Right Section */}
-      <motion.div
-        className="para-div w-full md:w-1/2 flex flex-col justify-start text-base md:text-[1.5em] leading-relaxed gap-15 pr-2 md:pl-10"
-        initial={{ x: 80, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <p className="para line-height-[1.5]">
-          I’m a passionate Full Stack Developer with over 4+ years of experience in
-          building interactive, responsive, and performance-driven web
-          applications. I specialize in crafting intuitive user experiences
-          using HTML5, CSS3, Tailwind CSS, JavaScript, and ReactJS. With a keen
-          eye for detail and design, I transform UI/UX ideas into clean,
-          efficient, and scalable code.
-        </p>
-
-        <p className="para line-height-[1.5]">
-          I’ve worked on impactful projects like <strong>Medibot.AI</strong>, an
-          AI-powered healthcare assistant, and{" "}
-          <strong>MediLife Healthcare</strong>, a patient-focused hospital
-          management solution. My role involved implementing pixel-perfect
-          interfaces from Figma, integrating APIs and payment gateways, managing
-          state with React Context API, and optimizing performance using modern
-          React workflows.
-        </p>
-
-        <p className="para line-height-[1.5]">
-          Currently, I’m exploring opportunities that challenge me to grow as a
-          developer while contributing to meaningful projects. I thrive in
-          collaborative environments, enjoy learning new tools and frameworks,
-          and am always curious about the latest trends in frontend development
-          and design systems.
-        </p>
-      </motion.div>
-    </section>
-  );
-};
-
-export default About;
+    <Section id="about">
+      <SectionHeading title="About Me" />
+      <div className="grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <motion.div variants={fade} initial="hidden" whileInView="show" viewport={{ once: true }} className="relative mx-auto w-full max-w-sm">
+          <div aria-hidden className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-mint/25 to-iris/25 blur-2xl" />
+          <motion.div whileHover={{ scale: 1.02 }} className="relative overflow-hidden rounded-3xl border border-line">
+            {imgOk
+              ? <img src={profileImage} alt={`Portrait of ${name}`} loading="lazy" width="480" height="600" onError={() => setImgOk(false)} className="aspect-[4/5] w-full object-cover" />
+              : <div className="grid aspect-[4/5] place-items-center bg-panel text-6xl font-bold text-white/20">SS</div>}
+          </motion.div>
+        </motion.div>
+        <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
+          {about.map((p) => <motion.p key={p.slice(0, 20)} variants={fade} className="mb-4 leading-relaxed text-slate-300">{p}</motion.p>)}
+          <motion.blockquote variants={fade} className="my-6 border-l-2 border-mint pl-4 italic text-slate-400">{quote}</motion.blockquote>
+          <motion.ul variants={stagger} className="mb-8 grid gap-2.5 sm:grid-cols-2">
+            {highlights.map((h) => (
+              <motion.li variants={fade} key={h} className="flex items-start gap-2 text-sm text-slate-300"><FiCheck className="mt-0.5 shrink-0 text-mint" aria-hidden />{h}</motion.li>
+            ))}
+          </motion.ul>
+          <motion.div variants={fade}><Button href={resume} download><FiDownload aria-hidden /> Download Resume</Button></motion.div>
+        </motion.div>
+      </div>
+    </Section>
+  )
+}

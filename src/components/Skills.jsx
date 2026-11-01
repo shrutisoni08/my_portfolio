@@ -1,135 +1,38 @@
-import React from "react";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiLayers, FiUsers } from 'react-icons/fi'
+import { SiReact, SiNextdotjs, SiJavascript, SiTypescript, SiHtml5, SiCss, SiTailwindcss, SiMui, SiFramer, SiVite, SiRedux, SiFirebase, SiNodedotjs, SiExpress, SiWordpress, SiWix } from 'react-icons/si'
+import { portfolioData } from '../data/portfolioData'
+import { Section, SectionHeading, fade, stagger } from './ui'
 
-// Skill Icons
-import Bootstrap from "../assets/Skills/skill1.png";
-import Canva from "../assets/Skills/skill2.png";
-import CSS from "../assets/Skills/skill3.png";
-import Figma from "../assets/Skills/skill4.png";
-import Git from "../assets/Skills/skill5.png";
-import GitHub from "../assets/Skills/skill6.png";
-import GithubCopilot from "../assets/Skills/skill7.png";
-import GoogleAds from "../assets/Skills/skill8.png";
-import GPT from "../assets/Skills/skill9.png";
-import Graphy from "../assets/Skills/skill10.png";
-import HTML from "../assets/Skills/skill11.png";
-import JavaScript from "../assets/Skills/skill12.png";
-import Lovable from "../assets/Skills/skill13.png";
-import MaterialUI from "../assets/Skills/skill14.png";
-import NodeJS from "../assets/Skills/skill5.png";
-import ReactIcon from "../assets/Skills/skill6.png";
-import Shopify from "../assets/Skills/skill17.png";
-import TailwindCSS from "../assets/Skills/skill18.png";
-import V0 from "../assets/Skills/skill19.png";
-import WordPress from "../assets/Skills/skill20.png";
-
-const skills = [
-  { name: "HTML", icon: HTML },
-  { name: "CSS", icon: CSS },
-  { name: "JavaScript", icon: JavaScript },
-  { name: "React", icon: ReactIcon },
-  { name: "Node.js", icon: NodeJS },
-  { name: "WordPress", icon: WordPress },
-  { name: "Shopify", icon: Shopify },
-  { name: "Graphy", icon: Graphy },
-  { name: "Bootstrap", icon: Bootstrap },
-  { name: "Tailwind CSS", icon: TailwindCSS },
-  { name: "Material-UI", icon: MaterialUI },
-  { name: "Git", icon: Git },
-  { name: "GitHub", icon: GitHub },
-  { name: "GitHub Copilot", icon: GithubCopilot },
-  { name: "Figma", icon: Figma },
-  { name: "Canva", icon: Canva },
-  { name: "GPT-4", icon: GPT },
-  { name: "Lovable", icon: Lovable },
-  { name: "Google Ads", icon: GoogleAds },
-  { name: "V0", icon: V0 },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-const Skills = () => {
+const icons = { 'React.js': SiReact, 'Next.js': SiNextdotjs, 'JavaScript (ES6+)': SiJavascript, TypeScript: SiTypescript, HTML5: SiHtml5, 'CSS3 / SCSS': SiCss, 'Tailwind CSS': SiTailwindcss, 'Material UI': SiMui, 'Framer Motion': SiFramer, Vite: SiVite, 'Redux Toolkit': SiRedux, 'Context API': SiReact, Firebase: SiFirebase, 'Node.js': SiNodedotjs, 'Express.js': SiExpress, WordPress: SiWordpress, Wix: SiWix }
+export default function Skills() {
+  const cats = Object.keys(portfolioData.skills)
+  const [cat, setCat] = useState(cats[0])
   return (
-    <motion.section
-      id="skills"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={containerVariants}
-      className="min-h-screen px-6 py-16 bg-[#FFF6E6] flex flex-col gap-12"
-    >
-      {/* Heading & Intro */}
-      <div className="text-left md:text-left ml-9">
-        <p className="text-xl font-heading md:text-1xl uppercase font-semibold text-orange-500 mb-4 tracking-wider">
-          Expertise
-        </p>
-        <p className="text-gray-700 text-lg font-para">
-          Technologies and tools I've worked with throughout my journey.
-        </p>
-      </div>
-
-      {/* Skills Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-6xl mx-auto w-full">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="relative group rounded-2xl p-10 shadow-md overflow-hidden animate-gradient custom-gradient"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="skills-container flex flex-col items-center justify-center transition-all duration-300 ease-in-out"
-            >
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="w-16 h-16 object-contain mb-3 drop-shadow-md transition-transform duration-300 group-hover:scale-110"
-              />
-              <p className="text-md font-skill text-orange-700 text-center">
-                {skill.name}
-              </p>
-            </motion.div>
-          </div>
+    <Section id="skills">
+      <SectionHeading title="Skills" sub="Tools and strengths I use to plan, build, and deliver websites." />
+      <div role="tablist" aria-label="Skill categories" className="mb-8 flex flex-wrap gap-2">
+        {cats.map((c) => (
+          <button key={c} role="tab" aria-selected={cat === c} onClick={() => setCat(c)}
+            className={`relative min-h-10 rounded-full px-4 py-2 text-sm transition-colors ${cat === c ? 'text-ink' : 'border border-line text-slate-300 hover:border-mint/50'}`}>
+            {cat === c && <motion.span layoutId="skill-tab" className="absolute inset-0 -z-10 rounded-full bg-mint" />}
+            {c}
+          </button>
         ))}
       </div>
-
-      <style jsx>{`
- .custom-gradient {
-  background-image: linear-gradient(
-    270deg,
-    #fff6e6,
-    #ffeacc,
-    #ffd8a8,
-    #ffae6d,
-    #ffeacc,
-    #fff6e6
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 8s ease infinite;
+      <AnimatePresence mode="wait">
+        <motion.ul key={cat} role="tabpanel" variants={stagger} initial="hidden" animate="show" exit={{ opacity: 0 }} className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {portfolioData.skills[cat].map((s) => {
+            const Icon = icons[s] || (cat === 'Leadership & Delivery' ? FiUsers : FiLayers)
+            return (
+              <motion.li key={s} variants={fade} whileHover={{ y: -4 }} className="glass flex items-center gap-3 rounded-2xl p-4 transition-colors hover:border-mint/50">
+                <Icon className="shrink-0 text-2xl text-mint" aria-hidden /><span className="text-sm font-medium">{s}</span>
+              </motion.li>
+            )
+          })}
+        </motion.ul>
+      </AnimatePresence>
+    </Section>
+  )
 }
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-}
-      `}</style>
-    </motion.section>
-  );
-};
-
-export default Skills;

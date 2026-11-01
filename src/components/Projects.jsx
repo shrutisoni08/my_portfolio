@@ -1,98 +1,41 @@
-import React from "react";
-import { projects } from "./Data";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { FiExternalLink, FiGithub } from 'react-icons/fi'
+import { portfolioData } from '../data/portfolioData'
+import { Badge, Section, SectionHeading, fade, stagger } from './ui'
 
-const techColors = {
-  React: "text-blue-400",
-  JavaScript: "text-yellow-400",
-  Tailwind: "text-cyan-400",
-  HTML: "text-orange-500",
-  CSS: "text-blue-600",
-  Bootstrap: "text-purple-400",
-  WordPress: "text-indigo-400",
-  Elementor: "text-pink-400",
-  FramerMotion: "text-yellow-400",
-};
-
-const Projects = () => {
+function Card({ p }) {
+  const [imgOk, setImgOk] = useState(Boolean(p.image))
   return (
-    <div id="projects" className="bg-[#212622] py-16 px-4 md:px-6 overflow-x-hidden">
-      <div className="max-w-6xl mx-auto w-full">
-        <motion.p
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-[#FEF6E6] text-lg mb-2 font-heading tracking-wider"
-        >
-          Projects
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="text-gray-300 mb-8 font-para"
-        >
-          A few projects I’ve built recently
-        </motion.p>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 w-full">
-          {projects?.map((proj, index) => (
-            <motion.div
-              key={proj.id || index}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 + index * 0.3 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col min-h-[450px]"
-            >
-              <img
-                src={proj.image}
-                alt={proj.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 flex flex-col justify-between flex-grow">
-                <h3 className="text-orange-700 text-xl font-semibold mb-2">
-                  {proj.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-2">
-                  {proj.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {proj.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className={`text-sm font-semibold ${techColors[tech] || "text-gray-400"}`}
-                    >
-                      #{tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3 flex-wrap">
-                  <a
-                    href={proj.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-orange-700 text-white px-3 py-1 rounded border border-amber-700 hover:bg-white hover:text-orange-700 hover:border-orange-700 text-sm flex items-center gap-1"
-                  >
-                    <FaExternalLinkAlt /> Live Preview
-                  </a>
-                  <a
-                    href={proj.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-transparent text-orange-700 border border-orange-700 px-3 py-1 rounded hover:bg-orange-700 hover:text-white hover:border-amber-50 text-sm flex items-center gap-1"
-                  >
-                    <FaGithub /> GitHub
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+    <motion.article variants={fade} whileHover={{ y: -6 }} className={`glass group flex flex-col overflow-hidden rounded-2xl transition-colors hover:border-mint/60 ${p.featured ? 'md:col-span-1' : ''}`}>
+      <div className="aspect-video overflow-hidden bg-gradient-to-br from-iris/20 via-panel to-mint/20">
+        {imgOk
+          ? <img src={p.image} alt={`${p.title} preview`} loading="lazy" width="640" height="360" onError={() => setImgOk(false)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          : <div className="grid h-full place-items-center px-4 text-center text-xl font-semibold text-white/40">{p.title}</div>}
       </div>
-    </div>
-  );
-};
+      <div className="flex flex-1 flex-col p-5">
+        {p.featured && <span className="mb-2 w-fit rounded-full bg-mint/15 px-2.5 py-0.5 text-xs font-medium text-mint">Featured</span>}
+        <h3 className="text-xl font-semibold">{p.title}</h3>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{p.description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">{p.tech.map((t) => <Badge key={t}>{t}</Badge>)}</div>
+        {(p.live || p.github) && (
+          <div className="mt-5 flex gap-3">
+            {p.live && <a href={p.live} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-mint px-4 text-sm font-semibold text-ink"><FiExternalLink aria-hidden /> Live Demo</a>}
+            {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-line px-4 text-sm hover:border-mint/60"><FiGithub aria-hidden /> Source Code</a>}
+          </div>
+        )}
+      </div>
+    </motion.article>
+  )
+}
 
-export default Projects;
+export default function Projects() {
+  return (
+    <Section id="projects">
+      <SectionHeading title="Projects" sub="A mix of professional delivery and personal builds." />
+      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {portfolioData.projects.map((p) => <Card key={p.title} p={p} />)}
+      </motion.div>
+    </Section>
+  )
+}

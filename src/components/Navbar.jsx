@@ -1,117 +1,55 @@
-import { useState } from "react";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import { HashLink } from "react-router-hash-link";
-import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
+import { FiMenu, FiX } from 'react-icons/fi'
 
-const navLinks = ["About", "Work", "Projects", "Skills"];
+export const links = ['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact']
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('home')
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 })
+
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: '-45% 0px -50% 0px' }
+    )
+    links.forEach((l) => { const el = document.getElementById(l.toLowerCase()); el && io.observe(el) })
+    return () => io.disconnect()
+  }, [])
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full z-50 shadow-md"
-      style={{
-        background: "linear-gradient(90deg, #212322 0%, #2a2c29 100%)",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="logo-heading text-[#EEE6D6] font-bold tracking-wider font-playfair cursor-pointer"
-          >
-            Shruti.
-          </motion.h1>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link, index) => (
-              <motion.div
-                key={link}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.2 }}
-              >
-                <HashLink
-                  smooth
-                  to={`#${link.toLowerCase()}`}
-                  className="nav-links text-[#839585] hover:text-[#FEF6E6] text-sm transition duration-300"
-                >
-                  {link}
-                </HashLink>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Contact Button */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.1 }}
-            className="hidden md:block"
-          >
-            <a
-              href="#contact"
-              className="cnt-btn px-6 py-4 rounded bg-[#EA8F10] text-white hover:bg-orange-400 transition-all duration-300"
-            >
-              Let's Work Together
-            </a>
-          </motion.div>
-
-          {/* Mobile Menu Icon */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-[#839585]"
-            >
-              {isOpen ? (
-                <HiOutlineX className="w-6 h-6" />
-              ) : (
-                <HiOutlineMenuAlt3 className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden px-6 pb-4 pt-2 space-y-4 bg-[#212322]"
-        >
-          {navLinks.map((link) => (
-            <HashLink
-              key={link}
-              smooth
-              to={`#${link.toLowerCase()}`}
-              onClick={() => setIsOpen(false)}
-              className="block text-[#839585] hover:text-[#FEF6E6] text-sm transition duration-300"
-            >
-              {link}
-            </HashLink>
+    <header className="glass fixed inset-x-0 top-0 z-50 border-x-0 border-t-0">
+      <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+        <a href="#home" className="text-lg font-bold tracking-tight">
+          Shruti<span className="text-mint">.</span>Soni
+        </a>
+        <ul className="hidden items-center gap-1 md:flex">
+          {links.map((l) => (
+            <li key={l}>
+              <a href={`#${l.toLowerCase()}`} aria-current={active === l.toLowerCase() ? 'page' : undefined}
+                className={`relative rounded-full px-3.5 py-2 text-sm transition-colors ${active === l.toLowerCase() ? 'text-white' : 'text-slate-400 hover:text-white'}`}>
+                {active === l.toLowerCase() && <motion.span layoutId="pill" className="absolute inset-0 -z-10 rounded-full bg-white/10" />}
+                {l}
+              </a>
+            </li>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setIsOpen(false)}
-            className="block w-full text-center px-4 py-2 bg-[#EA8F10] text-white rounded hover:bg-orange-400 transition"
-          >
-            Contact Me
-          </a>
-        </motion.div>
-      )}
-    </motion.nav>
-  );
-};
-
-export default Navbar;
+        </ul>
+        <button className="rounded-lg p-2 md:hidden" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
+          {open ? <FiX size={24} /> : <FiMenu size={24} />}
+        </button>
+      </nav>
+      <AnimatePresence>
+        {open && (
+          <motion.ul id="mobile-menu" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-t border-line md:hidden">
+            {links.map((l) => (
+              <li key={l}><a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)} className={`block px-6 py-3.5 ${active === l.toLowerCase() ? 'text-mint' : 'text-slate-300'}`}>{l}</a></li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+      <motion.div style={{ scaleX: progress }} className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gradient-to-r from-mint to-iris" aria-hidden />
+    </header>
+  )
+}

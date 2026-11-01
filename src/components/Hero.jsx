@@ -1,95 +1,125 @@
-import { TypeAnimation } from "react-type-animation";
-// eslint-disable-next-line no-unused-vars
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Profile from "../assets/profile.jpg"; // Assuming you have a profile image
+import { FiDownload } from "react-icons/fi";
+import { portfolioData } from "../data/portfolioData";
+import { Button, fade, stagger } from "./ui";
 
-const Hero = () => {
+export default function Hero() {
+  const { name, title, stack, headline, description, heroImage, resume } =
+    portfolioData.personal;
+  const [imgOk, setImgOk] = useState(true);
   return (
     <section
-      className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 bg-[#212322] text-[#EA8F10]"
-      id="hero"
+      id="home"
+      className="relative flex min-h-screen items-center overflow-hidden pt-24"
     >
-      {/* Left Section */}
+      <div className="bg-grid absolute inset-0" aria-hidden />
       <motion.div
-        className="flex-1 text-left"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="relative w-full mb-6">
-          <div className="absolute left-[-80px] top-1/2 transform -translate-y-1/2 w-24 h-1 bg-gradient-to-r from-orange-500 to-yellow-400 animate-pulse rounded" />
-          <h2 className="pl-8 text-xl font-semibold tracking-wide text-[#EEE6D6] capitalize">
-            Hello there, I'm Shruti
-          </h2>
-        </div>
-
-        <h1 className="text-4xl md:text-[4.5em] font-bold leading-tight mb-6 text-[#EEE6D6] font-['Playfair_Display']">
-          I design and develop beautiful, responsive,{" "}
-          <br className="hidden md:block" />
-          modern websites that make an impact.
-        </h1>
-
+        aria-hidden
+        animate={{ scale: [1, 1.12, 1] }}
+        transition={{ duration: 9, repeat: Infinity }}
+        className="absolute -right-24 top-1/4 h-[28rem] w-[28rem] rounded-full bg-iris/20 blur-[110px]"
+      />
+      <motion.div
+        aria-hidden
+        animate={{ scale: [1.1, 1, 1.1] }}
+        transition={{ duration: 11, repeat: Infinity }}
+        className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-mint/10 blur-[110px]"
+      />
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
         <motion.div
-          className="text-lg md:text-xl font-medium mt-2"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          variants={stagger}
+          initial="hidden"
+          animate="show"
+          className="order-2 lg:order-1"
         >
-          <span className="text-[#EEE6D6]">I am a </span>
-          <span className="inline-block">
-            <TypeAnimation
-              className="text-orange-500"
-              sequence={[
-                "Frontend Developer",
-                2000,
-                "Designer",
-                2000,
-                "Full Stack Developer",
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </span>
+          <motion.p variants={fade} className="text-lg text-slate-400">
+            Hello, I'm
+          </motion.p>
+          <motion.h1
+            variants={fade}
+            className="mt-1 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl"
+          >
+            <span className="bg-gradient-to-r from-white via-white to-mint bg-clip-text text-transparent">
+              {name}
+            </span>
+          </motion.h1>
+          <motion.p
+            variants={fade}
+            className="mt-4 text-xl font-medium text-mint sm:text-2xl"
+          >
+            {title}
+          </motion.p>
+          <motion.p variants={fade} className="mt-2 text-sm text-slate-500">
+            {stack}
+          </motion.p>
+          <motion.h2
+            variants={fade}
+            className="mt-6 text-2xl font-semibold leading-snug sm:text-3xl"
+          >
+            {headline}
+          </motion.h2>
+          <motion.p
+            variants={fade}
+            className="mt-4 max-w-xl leading-relaxed text-slate-400"
+          >
+            {description}
+          </motion.p>
+          <motion.div variants={fade} className="mt-8 flex flex-wrap gap-3">
+            <Button href="#projects" arrow>
+              View My Work
+            </Button>
+            <Button href="#contact" variant="ghost">
+              Contact Me
+            </Button>
+            <Button href={resume} variant="ghost" download>
+              <FiDownload aria-hidden /> Download Resume
+            </Button>
+          </motion.div>
         </motion.div>
-      </motion.div>
-
-      {/* Right Section */}
-      <motion.div
-        className="flex-1 mt-10 md:mt-0 flex justify-center"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="relative flex-1 mt-10 md:mt-0 flex justify-center">
-          {/* Decorative lines – Top Left */}
-          <div className="decorative-l absolute top-10 left-10 space-y-2 hidden md:block">
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-          </div>
-
-          {/* Decorative lines – Bottom Right */}
-          <div className="decorative-r absolute bottom-10 right-10 space-y-2 hidden md:block">
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-            <div className="w-20 h-[1px] bg-orange-500 opacity-70 animate-pulse"></div>
-          </div>
-
-          {/* Image */}
-          <img
-            // src="https://themewagon.github.io/monica/images/intro-bg@2x.jpg"
-            src={Profile}
-            alt="Developer"
-            className="w-full max-w-md h-[590px] rounded-xl shadow-lg"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="relative order-1 mx-auto w-full max-w-[17rem] sm:max-w-sm lg:order-2 lg:max-w-md"
+        >
+          <div
+            aria-hidden
+            className="absolute inset-[8%] rounded-full bg-gradient-to-tr from-mint/30 to-iris/30 blur-3xl"
           />
-        </div>
-      </motion.div>
+          <motion.div
+            aria-hidden
+            animate={{ rotate: 360 }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-[4%] rounded-full border border-dashed border-mint/30"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-[14%] rounded-full border border-iris/30"
+          />
+          <motion.div
+            animate={{ y: [0, 0, 0] }}
+            transition={{ duration: 0, repeat: Infinity, ease: "easeInOut" }}
+            className="relative aspect-square"
+          >
+            {imgOk ? (
+              <img
+                src={heroImage}
+                alt={`${name}, ${title}`}
+                width="600"
+                height="600"
+                fetchPriority="high"
+                onError={() => setImgOk(false)}
+                className="h-full w-full object-contain object-bottom drop-shadow-2xl"
+              />
+            ) : (
+              <div className="grid h-full place-items-center text-7xl font-bold text-white/20">
+                SS
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
-};
-
-export default Hero;
+}
