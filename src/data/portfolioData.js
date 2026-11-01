@@ -22,8 +22,8 @@ export const portfolioData = {
     tagline: 'Building scalable websites, web applications, and digital experiences.',
   },
   // TODO: fill these in (not present in the source PDF)
-  contact: { email: '', phone: '', location: '' },
-  socialLinks: { github: 'https://github.com/shrutisoni08', linkedin: '' },
+  contact: { email: 'shruti08soni@gmail.com', phone: '+91-9407886993', location: 'Bhopal, Madhya Pradesh' },
+  socialLinks: { github: 'https://github.com/shrutisoni08', linkedin: 'https://www.linkedin.com/in/shruti-soni-12d081209/' },
   formEndpoint: '', // e.g. a Formspree URL. Empty = opens the visitor's email app (mailto) instead.
   skills: {
     Frontend: ['React.js', 'Next.js', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3 / SCSS', 'Tailwind CSS', 'Material UI', 'Framer Motion', 'Vite'],
@@ -34,7 +34,7 @@ export const portfolioData = {
     'Leadership & Delivery': ['Website Project Management', 'Team Leadership & Coordination', 'CMS Management', 'Website Content Management', 'Design & Development Coordination', 'Client Communication & Requirement Gathering'],
   },
   experience: [
-    { role: 'Fullstack Developer', company: 'Brands Group Corporate Pvt. Ltd.', period: 'Jul 2025 – Sep 2026', summary: 'Full Stack Developer with frontend and project coordination responsibilities, leading website development and CMS-based delivery across design, content, development, SEO, and technical support.',
+    { role: 'Fullstack Developer', company: 'Brands Group Corporate Pvt. Ltd.', period: 'Jul 2025 – Oct 2026', summary: 'Full Stack Developer with frontend and project coordination responsibilities, leading website development and CMS-based delivery across design, content, development, SEO, and technical support.',
       points: ['Owned website projects from requirements and planning through development, QA, deployment, and post-launch support.', 'Contributed to the development and delivery of 3 company websites.', 'Built frontend for an ERP project and for a Madhya Pradesh (MP) Tourism website.', 'Handled SEO requirements: page structure, metadata, headings, URLs, image optimization, and performance.', 'Coordinated domain, hosting, deployment, and post-launch maintenance.'],
       tech: ['React.js', 'Next.js', 'JavaScript', 'WordPress', 'Tailwind CSS', 'SEO'] },
     { role: 'Front End Developer', company: 'ASVIX', period: 'Jan 2025 – Jun 2025', summary: 'Frontend Lead for an AI-powered healthcare application, collaborating with backend and cross-functional stakeholders.',
