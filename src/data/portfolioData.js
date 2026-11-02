@@ -15,7 +15,7 @@ export const portfolioData = {
     highlights: ['5 years of hands-on development', 'Frontend & full stack development', 'Team lead & project coordination', 'Corporate & freelance projects', 'Deployment & website management', 'SEO & performance optimization', 'Client requirement gathering', 'Team mentoring'],
     heroImage: '/images/hero.png',
     profileImage: '/images/profile.jpg',
-    resume: '/resume.pdf',
+    resume: '/ShrutiResume.pdf',
     contactHeading: 'Let’s Build Something Great Together',
     contactText: "Whether you're looking for a frontend developer, full stack developer, project lead, or someone to take ownership of a website project from development through deployment, I'd be happy to connect.",
     contactSecondary: "I'm open to discussing full-time opportunities, development projects, and collaborations.",
@@ -57,7 +57,7 @@ export const portfolioData = {
   certifications: ['ReactJS – Infosys Springboard', 'JavaScript – Infosys Springboard', 'HTML & CSS – Great Learning', 'Full Stack Development – Skill Academy by Testbook'],
   projects: [
     { title: 'Corporate & ERP Projects', featured: true, image: '', description: 'Professional website work from corporate experience: 3 company websites, an ERP project, and an MP Tourism website. Covered frontend development, responsive UI, site structure, content integration, testing, and team coordination.', tech: ['React.js', 'Next.js', 'Tailwind CSS', 'WordPress'], live: '', github: '' },
-    { title: 'Shoppers World', featured: true, image: '/images/projects/shoppers-world.jpg', description: 'E-commerce app with product listings, search and filtering, a shopping cart, and a smooth shopping flow built from reusable React components.', tech: ['React', 'JavaScript', 'Tailwind'], live: 'https://shoppers-world.netlify.app/', github: 'https://github.com/shrutisoni08/Shoppers-World-Ecom-React.Js' },
+    { title: 'Shoppers World', featured: true, image: '/images/projects/shoppers-world.jpg', description: 'E-commerce app with product listings, search and filtering, a shopping cart, and a smooth shopping flow built from reusable React components.', tech: ['React', 'JavaScript', 'Tailwind'], live: 'https://shoppers-world.netlify.app/', github: '' },
     { title: 'Coders Cafe', featured: true, image: '/images/projects/coders-cafe.jpg', description: 'Interactive community hub for developers with smooth transitions and animations, focused on interaction and content sharing.', tech: ['React', 'Tailwind', 'Framer Motion'], live: 'https://the-coders-cafe.netlify.app/', github: 'https://github.com/shrutisoni08/The-Coders-Cafe' },
     { title: 'Fashion Plaza', image: '/images/projects/fashion-plaza.jpg', description: 'WordPress fashion site built with Elementor to showcase products, lookbooks, and collections. Fast loading and mobile responsive.', tech: ['WordPress', 'Elementor'], live: 'https://fashion-plaza.netlify.app/', github: 'https://github.com/shrutisoni08' },
     { title: 'Flexical Calculator', image: '/images/projects/flexical.jpg', description: 'Modern React app for calendar and event functionality with a clean, responsive interface.', tech: ['React', 'JavaScript', 'Tailwind'], live: 'https://flexicalc.netlify.app/', github: 'https://github.com/shrutisoni08/React-Calculator' },
